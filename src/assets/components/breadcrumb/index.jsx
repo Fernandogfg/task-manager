@@ -1,6 +1,8 @@
-function Breadcrumb(){
-    return(
-        <p>home</p>
-    )
+function Breadcrumb() {
+  return (
+    <div id="breadcrumb">
+      <p>home</p>
+    </div>
+  );
 }
-export default Breadcrumb
+export default Breadcrumb;

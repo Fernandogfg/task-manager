@@ -1,4 +1,5 @@
-@import url('./assets/components/logo/logo.css');
+@import url("./assets/components/imports.css"
+);
 #root {
   max-width: 1280px;
   margin: 0 auto;

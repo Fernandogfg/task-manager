@@ -1,5 +1,5 @@
 function Busca (){
-    return(<>
-    <input type="text" /></>)
+    return(<div id="busca">
+    <input type="text" /></div>)
 }
 export default Busca
