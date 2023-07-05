@@ -1,6 +1,7 @@
 import "./App.css";
 import HeaderContainer from "./assets/components/headerContainer";
 import Logo from "./assets/components/logo/index";
+import MainContainer from "./assets/components/mainContainer";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <header>
         <Logo />
         <HeaderContainer></HeaderContainer>
+        <MainContainer />
       </header>
     </>
   );
