@@ -5,8 +5,6 @@ function MainContainer(){
     return(
         <main id="mainContainer">
             <TaskContainer/>
-            <TaskContainer/>
-            <TaskContainer/>
         </main>
     )
 }

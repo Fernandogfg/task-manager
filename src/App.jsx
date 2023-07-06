@@ -6,11 +6,8 @@ import MainContainer from "./assets/components/mainContainer";
 function App() {
   return (
     <>
-      <header>
-        <Logo />
-        <HeaderContainer></HeaderContainer>
-        <MainContainer />
-      </header>
+      <HeaderContainer/>
+      <MainContainer />
     </>
   );
 }

@@ -1,12 +1,13 @@
 import Breadcrumb from "../breadCrumb";
 import Busca from "../busca";
-
+import Logo from "../logo";
 function HeaderContainer() {
   return (
-    <div id = 'headerContainer'>
+    <header id="headerContainer">
+      <Logo />
       <Breadcrumb />
       <Busca />
-    </div>
+    </header>
   );
 }
-export default HeaderContainer
+export default HeaderContainer;

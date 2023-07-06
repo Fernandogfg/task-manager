@@ -1,0 +1,9 @@
+.task {
+  background-color: red;
+  padding: 10px;
+  border-radius: 4px;
+}
+.task p {
+  margin: 0;
+  text-align: left;
+}
