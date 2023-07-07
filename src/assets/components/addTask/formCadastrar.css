@@ -1,0 +1,56 @@
+#formCadastrar {
+  display: grid;
+  gap: 30px;
+  padding: 64px;
+  background-color: rgb(6, 30, 77);
+}
+#formCadastrar input {
+  width: 60%;
+  height: 50px;
+  background-color: white;
+  color: black;
+  font-size: x-large;
+}
+#formCadastrar label {
+  text-align: left;
+  display: grid;
+}
+#formCadastrar select {
+  width: 60%;
+  height: 60px;
+  font-size: x-large;
+  background-color: white;
+  color: black;
+}
+.contBtn {
+  display: flex;
+  gap: 16px;
+}
+.contBtn button {
+  padding: 10px;
+  border-radius: 5px;
+  height: 50px;
+  width: 120px;
+  font-size: larger;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.cancelar {
+  color: white;
+  background-color: red;
+
+  border: 0;
+}
+.cancelar:hover {
+  background-color: rgb(204, 1, 1);
+}
+.salvar {
+  color: black;
+  background-color: green;
+
+  border: 0;
+}
+.salvar:hover{
+    background-color: rgb(0, 114, 0);
+}
