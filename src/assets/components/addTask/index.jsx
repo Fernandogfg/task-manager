@@ -1,15 +1,26 @@
 import { Link } from "react-router-dom";
+import taskAddFetch from "../../utils/taskAddFetch";
 
 function AddTask() {
+  const haddleAdicionar = () => {
+    const taskData = {
+      name: document.getElementById("nome").value,
+      status: document.getElementById("status").value,
+      description: document.getElementById("descricaoAdd").value,
+    };
+    console.log(taskData);
+    return taskData;
+  };
+
   return (
     <div id="formCadastrar">
       <label htmlFor="nome">
         Nome
         <input type="text" id="nome" />
       </label>
-      <label htmlFor="status">
-        Status{" "}
-        <select id="">
+      <label>
+        Status
+        <select id="status">
           <option value=""></option>
           <option value="LISTADA">Listada</option>
           <option value="INICIADA">Iniciada</option>
@@ -18,14 +29,21 @@ function AddTask() {
       </label>
       <label>
         Descrição
-        <textarea className="descricao"></textarea>
+        <textarea className="descricao" id="descricaoAdd"></textarea>
       </label>
       <div className="contBtn">
         <Link to="/">
           <button className="cancelar">Cancelar</button>
         </Link>
         <Link to="/">
-          <button className="salvar">Adicionar</button>
+          <button
+            className="salvar"
+            onClick={() => {
+              taskAddFetch(haddleAdicionar());
+            }}
+          >
+            Adicionar
+          </button>
         </Link>
       </div>
     </div>

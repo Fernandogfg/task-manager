@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import TasksFetch from "../../utils/tasksFetch";
 import { useEffect } from "react";
@@ -15,34 +16,37 @@ function TaskContainer() {
       setTasks(data);
     });
   }, []);
-
+  const updateTasks = () => {
+    TasksFetch((data) => {
+      setTasks(data);
+    });}
   return (
     <>
-      <section className="taskContainer">
-        Listadas
-        <Link to='/cadastrar'>
+      <section className="taskSection">
+        <p className="taskHeader">Listadas</p>
+        <Link to='/cadastrar'  className="taskHeader">
           <img src={Add} />
         </Link>
         {tasksListada.map((task) => (
-          <Task key={task.id} {...task} />
+          <Task key={task.id} {...task} updateTasks = {updateTasks}/>
         ))}
       </section>
-      <section className="taskContainer">
-        Iniciadas
-        <Link>
+      <section className="taskSection">
+        <p  className="taskHeader">Iniciadas</p>
+        <Link to='/cadastrar'  className="taskHeader">
           <img src={Add} />
         </Link>
         {tasksIniciada.map((task) => (
-          <Task key={task.id} {...task} />
+          <Task key={task.id} {...task}  updateTasks = {updateTasks}/>
         ))}
       </section>
-      <section className="taskContainer">
-        Finalizadas
-        <Link>
+      <section className="taskSection">
+        <p  className="taskHeader">Finalizadas</p>
+        <Link to='/cadastrar'  className="taskHeader">
           <img src={Add} />
         </Link>
         {tasksFinalizadas.map((task) => (
-          <Task key={task.id} {...task} />
+          <Task key={task.id} {...task}  updateTasks = {updateTasks}/>
         ))}
       </section>
     </>

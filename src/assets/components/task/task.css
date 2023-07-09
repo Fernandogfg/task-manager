@@ -2,8 +2,22 @@
   background-color: red;
   padding: 10px;
   border-radius: 4px;
+  display: grid;
 }
 .task p {
   margin: 0;
   text-align: left;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+.taskOptions {
+  position: relative;
+  background-color: rgba(153, 4, 4, 0.623);
+  padding: 10px;
+  border: 0px;
+  z-index: 5;
+  display: grid;
+  left: 50px;
 }
