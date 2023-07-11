@@ -8,6 +8,7 @@ function Router(){
     <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/cadastrar" element={<AddTask/>}/>
+        <Route path="/editar/:id" element={<AddTask/>}/>
     </Routes>
     )
 }

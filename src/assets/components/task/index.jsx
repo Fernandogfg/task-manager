@@ -1,17 +1,22 @@
 import edit from "../../images/edit.svg";
 import { useState } from "react";
-import atualizaTask from "../../utils/atualizaTask";
-import TaskContainer from "../taskContainer";
+import trocaStatus from "../../utils/trocaStatus";
+import fetchDeletaTask from "../../utils/fetchDeletaTask";
+
 function Task(props) {
   const [isOptionsOpen, setOptionsOpen] = useState(false);
   const handleToggleOptions = () => {
     setOptionsOpen(!isOptionsOpen);
   };
-  const updatePage = (status) => {
-    atualizaTask(props.id, status);
-    setOptionsOpen(false);
+  const updatePage = async (status) => {
+    await trocaStatus(props.id, status);
+    handleToggleOptions()
     props.updateTasks()
   };
+  const deletaTask = async (id)=>{
+    await fetchDeletaTask(id)
+    props.updateTasks()
+  }
   const ReturnOptions = () => {
     if (props.status === "LISTADA") {
       return (
@@ -84,13 +89,16 @@ function Task(props) {
           alt="editar"
           title="editar"
           onClick={handleToggleOptions}
-        />
-        {isOptionsOpen && (
-          <div className="taskOptions">
-            <button>editar</button>
-            <ReturnOptions />
-          </div>
-        )}
+          />
+      {isOptionsOpen && (
+        <div className="taskOptions">
+          <button>Editar</button>
+          <button onClick={()=>{
+            deletaTask(props.id)
+          }}>Deletar</button>
+          <ReturnOptions />
+        </div>
+      )}
       </div>
       <p>{props.description}</p>
     </div>
