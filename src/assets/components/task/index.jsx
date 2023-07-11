@@ -2,6 +2,7 @@ import edit from "../../images/edit.svg";
 import { useState } from "react";
 import trocaStatus from "../../utils/trocaStatus";
 import fetchDeletaTask from "../../utils/fetchDeletaTask";
+import { Link } from "react-router-dom";
 
 function Task(props) {
   const [isOptionsOpen, setOptionsOpen] = useState(false);
@@ -10,13 +11,13 @@ function Task(props) {
   };
   const updatePage = async (status) => {
     await trocaStatus(props.id, status);
-    handleToggleOptions()
-    props.updateTasks()
+    handleToggleOptions();
+    props.updateTasks();
   };
-  const deletaTask = async (id)=>{
-    await fetchDeletaTask(id)
-    props.updateTasks()
-  }
+  const deletaTask = async (id) => {
+    await fetchDeletaTask(id);
+    props.updateTasks();
+  };
   const ReturnOptions = () => {
     if (props.status === "LISTADA") {
       return (
@@ -89,16 +90,23 @@ function Task(props) {
           alt="editar"
           title="editar"
           onClick={handleToggleOptions}
-          />
-      {isOptionsOpen && (
-        <div className="taskOptions">
-          <button>Editar</button>
-          <button onClick={()=>{
-            deletaTask(props.id)
-          }}>Deletar</button>
-          <ReturnOptions />
-        </div>
-      )}
+        />
+        {isOptionsOpen && (
+          <div className="taskOptions">
+            <Link to={`/editar/${props.id}`}>
+              <button>Editar</button>
+            </Link>
+            <button
+              onClick={() => {
+                deletaTask(props.id);
+              }}
+            >
+              Deletar
+            </button>
+
+            <ReturnOptions />
+          </div>
+        )}
       </div>
       <p>{props.description}</p>
     </div>
