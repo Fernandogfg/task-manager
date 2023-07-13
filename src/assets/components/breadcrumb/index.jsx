@@ -10,10 +10,10 @@ function Breadcrumb() {
         <a>
           <Link to="/">Home</Link>
         </a>
-        {pathnames.map((path, index) => {
-          const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;//junta o primeiro com o próximo usando uma barra "/" e armazena a string atual
+        {pathnames.map((path, i) => {
+          const routeTo = `/${pathnames.slice(0, i + 1).join('/')}`;//junta o primeiro com o próximo usando uma barra "/" e armazena a string atual
 
-          return (//já que o primeiro vai ser sempre Home como está acima, inserimos a variavel routeTo detro de um link
+          return (//já que o primeiro vai ser sempre Home como está acima, inserimos a variavel routeTo detro de um link para poder acessar o endereço
             <a key={path}>
                /<Link to={routeTo}>{path}</Link> 
             </a>
