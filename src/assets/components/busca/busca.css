@@ -2,3 +2,11 @@
   display: flex;
   justify-content: right;
 }
+#busca input {
+  background-color: white;
+  width: 30%;
+  height: 40px;
+  border-radius: 5px;
+  color: black;
+  font-size: larger;
+}

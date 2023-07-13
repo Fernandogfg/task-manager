@@ -1,4 +1,13 @@
-#breadcrumb{
-    display: flex;
-    justify-content: left;
+#breadcrumb {
+  display: flex;
+  justify-content: left;
+}
+.breadcrumb {
+  padding: 0;
+  text-align: left;
+}
+.breadcrumb a {
+  color: white;
+  font-size: larger;
+  text-decoration: none;
 }

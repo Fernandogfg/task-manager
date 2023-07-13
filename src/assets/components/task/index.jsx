@@ -1,5 +1,5 @@
 import edit from "../../images/edit.svg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import trocaStatus from "../../utils/trocaStatus";
 import fetchDeletaTask from "../../utils/fetchDeletaTask";
 import { Link } from "react-router-dom";
@@ -84,7 +84,7 @@ function Task(props) {
   return (
     <div className="task">
       <div className="title">
-        <p>{props.name}</p>
+        <p className="taskName">{props.name}</p>
         <img
           src={edit}
           alt="editar"
@@ -92,7 +92,7 @@ function Task(props) {
           onClick={handleToggleOptions}
         />
         {isOptionsOpen && (
-          <div className="taskOptions">
+          <div className="taskOptions" ref={elementRef}>
             <Link to={`/editar/${props.id}`}>
               <button>Editar</button>
             </Link>
@@ -108,7 +108,10 @@ function Task(props) {
           </div>
         )}
       </div>
-      <p>{props.description}</p>
+      <p className="description">
+        {props.description.substring(0, 60)}
+        {}
+      </p>
     </div>
   );
 }

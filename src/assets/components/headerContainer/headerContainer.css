@@ -1,3 +1,8 @@
-#headerContainer{
-    display: grid;
+#headerContainer {
+  display: grid;
+  margin-bottom: 16px;
+}
+.busca{
+    background-color: white;
+    
 }

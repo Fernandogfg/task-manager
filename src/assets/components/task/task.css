@@ -1,5 +1,5 @@
 .task {
-  background-color: red;
+  background-color: rgb(10, 2, 126);
   padding: 10px;
   border-radius: 4px;
   display: grid;
@@ -16,21 +16,42 @@
   position: absolute;
   right: 4px;
   z-index: 6;
+  color: white;
 }
 .taskOptions {
   position: absolute;
-  background-color: rgba(153, 4, 4, 0.623);
-  padding: 16px;
-  right: -110px;
+  padding: 8px 4px;
+  right: 10px;
   height: 150px;
   width: 110px;
   border: 0px;
   z-index: 5;
   display: grid;
+  border-radius: 10px;
+  background-color: rgba(7, 26, 41, 0.322);
+  backdrop-filter: blur(2px);
 }
 .taskOptions button {
-  background-color: blue;
+  background-color: rgba(63, 63, 253, 0);
   width: 100%;
-  font-size: larger;
+  height: 100%;
+  font-size: large;
+  border: 0;
+  cursor: pointer;
   font-weight: bold;
+  border-radius: 10px;
+}
+.taskOptions button:hover {
+  background-color: rgb(84, 123, 230);
+}
+.taskName {
+  font-weight: bolder;
+}
+
+.description {
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  background-color: rgb(50, 50, 139);
+  border-radius: 4px;
 }

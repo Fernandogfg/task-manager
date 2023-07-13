@@ -2,6 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import fetchBuscaTarefa from "../../utils/fetchBuscaTask";
 import { useEffect, useState } from "react";
 import atualizaTask from "../../utils/atualizaTask";
+import Breadcrumb from "../breadCrumb";
+import Logo from "../logo";
 const PageEditar = () => {
   const { id } = useParams();
   const [data, setData] = useState({});
@@ -19,6 +21,7 @@ const PageEditar = () => {
     if (data.status === "LISTADA") {
       return (
         <>
+        
           <option value="LISTADA">Listada</option>
           <option value="INICIADA">Iniciada</option>
           <option value="FINALIZADA">Finalizada</option>
@@ -42,8 +45,11 @@ const PageEditar = () => {
         );
       }
   }
+  
   return (
     <div id="formEditar">
+      <Logo/>
+      <Breadcrumb/>
       <label htmlFor="nome">
         Nome
         <input type="text" defaultValue={data.name} id="nomeEditar" />

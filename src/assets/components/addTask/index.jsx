@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import taskAddFetch from "../../utils/taskAddFetch";
-
+import Breadcrumb from "../breadCrumb";
+import Logo from '../logo'
 function AddTask() {
   const haddleAdicionar = () => {
     const taskData = {
@@ -11,9 +12,12 @@ function AddTask() {
     console.log(taskData);
     return taskData;
   };
+  
 
   return (
     <div id="formCadastrar">
+      <Logo/>
+      <Breadcrumb />
       <label htmlFor="nome">
         Nome
         <input type="text" id="nome" />
